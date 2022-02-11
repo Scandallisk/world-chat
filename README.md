@@ -20,7 +20,7 @@ This code was produced for PublicServer version 1.4.7
 
 
 
-# Files requiring an update:
+# Files requiring an update
 
 ## player.lua
 
