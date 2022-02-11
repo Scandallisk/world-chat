@@ -9,6 +9,13 @@ This feature permits users to type in a global chat for your community.  Users w
 
 Produced by SCAN from HOPE Society
 
+## Instructions
+
+Simply copy paste the code below into the file names listed at the specific line.
+
+This code was produced for PublicServer version 1.4.7
+
+
 
 # Files requiring an update:
 
