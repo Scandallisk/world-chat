@@ -7,7 +7,7 @@ This feature permits users to type in a global chat for your community.  Users w
 
 - World chat is not logged against the server logs.  Please use at your own discretion.
 
-Produced by SCAN from HOPE Society
+Produced by SCAN & EricTheGreat from HOPE Society
 
 ## Instructions
 
