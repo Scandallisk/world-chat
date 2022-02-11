@@ -20,7 +20,7 @@ This code was produced for PublicServer version 1.4.7
 
 # Files requiring an update:
 
-## player.lua
+## base > scripts > player.lua
 
 ### Lines 364-365
 
@@ -37,7 +37,7 @@ This code was produced for PublicServer version 1.4.7
     end)
 
 
-## scriptcommands_possessee.lua
+## base > scripts > scriptcommands_possessee.lua
 
 ### Lines 15-27
 
