@@ -22,64 +22,41 @@ This code was produced for PublicServer version 1.4.7
 
 ## player.lua
 
-### Lines 364
+### Lines 364-365
 
     --SCAN ADDED
-
     local chatChannels = { {"Say","say"}, {"World","world"} } 
 
 
-### Lines 2150 - 2153
+### Lines 2150-2154
 
     -- SCAN, ADDED
-
     RegisterEventHandler(EventType.Message,"World.Chat",
-
     function(name,title,msg)
-    
-        this:SystemMessage( "[FFBF00][World] " .. name .. " : " .. msg .."[-]","custom")
-        
+            this:SystemMessage( "[FFBF00][World] " .. name .. " : " .. msg .."[-]","custom")  
     end)
 
 
 ## scriptcommands_possessee.lua
 
-### Lines 15 - 28
+### Lines 15-27
 
     -- SCAN ADDED
-
     WorldMessage = function(...)  
-
-        if ( this:HasTimer("AntiWorldChatSpam") ) then
-        
-            return
-            
-        end
-        
-        this:ScheduleTimerDelay(TimeSpan.FromSeconds(2), "AntiWorldChatSpam")
-        
-        local onlineUsers = GlobalVarRead("User.Online")
-        
-        local message = CombineArgs(...)
-        
-        if(onlineUsers) then
-        
-            for user,y in pairs(onlineUsers) do
-            
-                --if ( GlobalVarReadKey("User.Online", memberObj) ) then
-                
-                user:SendMessageGlobal("World.Chat", this:GetCharacterName(), tostring(this:GetSharedObjectProperty("Title")), message)
-                
-                --end
-                
-            end
-            
+        if ( this:HasTimer("AntiWorldChatSpam") ) then      
+            return            
+        end        
+        this:ScheduleTimerDelay(TimeSpan.FromSeconds(2), "AntiWorldChatSpam")        
+        local onlineUsers = GlobalVarRead("User.Online")        
+        local message = CombineArgs(...)        
+        if(onlineUsers) then        
+            for user,y in pairs(onlineUsers) do                        
+                user:SendMessageGlobal("World.Chat", this:GetCharacterName(), tostring(this:GetSharedObjectProperty("Title")), message)                          
+            end            
         end
 
-
-### Lines 141
+### Lines 141-142
 
     --SCAN, ADDED
-
     RegisterCommand{ Command="world", AccessLevel = AccessLevel.Mortal, Func=PossesseeCommandFuncs.WorldMessage, Desc="Sends a world message", Aliases={"wd", "yell", "wc"} } 
 
