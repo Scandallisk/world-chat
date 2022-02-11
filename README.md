@@ -17,14 +17,20 @@ Produced by SCAN from HOPE Society
 ### Lines 364
 
 --SCAN ADDED
+
 local chatChannels = { {"Say","say"}, {"World","world"} } 
+
 
 ### Lines 2150 - 2153
 
 -- SCAN, ADDED
-RegisterEventHandler(EventType.Message,"World.Chat", 
+
+RegisterEventHandler(EventType.Message,"World.Chat",
+
     function(name,title,msg)
+    
         this:SystemMessage( "[FFBF00][World] " .. name .. " : " .. msg .."[-]","custom")
+        
     end)
 
 
@@ -33,23 +39,39 @@ RegisterEventHandler(EventType.Message,"World.Chat",
 ### Lines 15 - 28
 
 -- SCAN ADDED
+
 WorldMessage = function(...)  
+
         if ( this:HasTimer("AntiWorldChatSpam") ) then
+        
             return
+            
         end
+        
         this:ScheduleTimerDelay(TimeSpan.FromSeconds(2), "AntiWorldChatSpam")
+        
         local onlineUsers = GlobalVarRead("User.Online")
+        
         local message = CombineArgs(...)
+        
         if(onlineUsers) then
+        
             for user,y in pairs(onlineUsers) do
+            
                 --if ( GlobalVarReadKey("User.Online", memberObj) ) then
+                
                 user:SendMessageGlobal("World.Chat", this:GetCharacterName(), tostring(this:GetSharedObjectProperty("Title")), message)
+                
                 --end
+                
             end
+            
         end
 
 
 ### Lines 141
 
-RegisterCommand{ Command="world", AccessLevel = AccessLevel.Mortal, Func=PossesseeCommandFuncs.WorldMessage, Desc="Sends a world message", Aliases={"wd", "yell", "wc"} } --SCAN, ADDED
+--SCAN, ADDED
+
+RegisterCommand{ Command="world", AccessLevel = AccessLevel.Mortal, Func=PossesseeCommandFuncs.WorldMessage, Desc="Sends a world message", Aliases={"wd", "yell", "wc"} } 
 
