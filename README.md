@@ -20,9 +20,11 @@ This code was produced for PublicServer version 1.4.7
 
 # Files requiring an update:
 
-## base > scripts > player.lua
+## player.lua
 
 ### Lines 364-365
+
+Path:  base > scripts > player.lua
 
     --SCAN ADDED
     local chatChannels = { {"Say","say"}, {"World","world"} } 
@@ -30,16 +32,19 @@ This code was produced for PublicServer version 1.4.7
 
 ### Lines 2150-2154
 
+Path:  base > scripts > player.lua
+
     -- SCAN, ADDED
     RegisterEventHandler(EventType.Message,"World.Chat",
     function(name,title,msg)
             this:SystemMessage( "[FFBF00][World] " .. name .. " : " .. msg .."[-]","custom")  
     end)
 
-
-## base > scripts > scriptcommands_possessee.lua
+## scriptcommands_possessee.lua
 
 ### Lines 15-27
+
+Path:  base > scripts > scriptcommands_possessee.lua
 
     -- SCAN ADDED
     WorldMessage = function(...)  
@@ -56,6 +61,8 @@ This code was produced for PublicServer version 1.4.7
         end
 
 ### Lines 141-142
+
+Path:  base > scripts > scriptcommands_possessee.lua
 
     --SCAN, ADDED
     RegisterCommand{ Command="world", AccessLevel = AccessLevel.Mortal, Func=PossesseeCommandFuncs.WorldMessage, Desc="Sends a world message", Aliases={"wd", "yell", "wc"} } 
