@@ -16,16 +16,16 @@ Produced by SCAN from HOPE Society
 
 ### Lines 364
 
---SCAN ADDED
+    --SCAN ADDED
 
-local chatChannels = { {"Say","say"}, {"World","world"} } 
+    local chatChannels = { {"Say","say"}, {"World","world"} } 
 
 
 ### Lines 2150 - 2153
 
--- SCAN, ADDED
+    -- SCAN, ADDED
 
-RegisterEventHandler(EventType.Message,"World.Chat",
+    RegisterEventHandler(EventType.Message,"World.Chat",
 
     function(name,title,msg)
     
@@ -38,9 +38,9 @@ RegisterEventHandler(EventType.Message,"World.Chat",
 
 ### Lines 15 - 28
 
--- SCAN ADDED
+    -- SCAN ADDED
 
-WorldMessage = function(...)  
+    WorldMessage = function(...)  
 
         if ( this:HasTimer("AntiWorldChatSpam") ) then
         
@@ -71,7 +71,7 @@ WorldMessage = function(...)
 
 ### Lines 141
 
---SCAN, ADDED
+    --SCAN, ADDED
 
-RegisterCommand{ Command="world", AccessLevel = AccessLevel.Mortal, Func=PossesseeCommandFuncs.WorldMessage, Desc="Sends a world message", Aliases={"wd", "yell", "wc"} } 
+    RegisterCommand{ Command="world", AccessLevel = AccessLevel.Mortal, Func=PossesseeCommandFuncs.WorldMessage, Desc="Sends a world message", Aliases={"wd", "yell", "wc"} } 
 
