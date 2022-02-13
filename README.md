@@ -11,7 +11,9 @@ This feature permits users to type in a global chat for your community.  Users w
 
 ## Instructions
 
-Simply copy paste the code below into the file names listed at the specific line.  You will be required to restart your server for these changes to take effect.  If you make changes to the player.lua while other players are on your server you will risk crashing your server and forcing a restart.  
+- Simply copy paste the code below into the file names listed at the specific line.  
+- You will be required to restart your server for these changes to take effect.  
+- If you make changes to the player.lua while other players are on your server you will risk crashing your server and forcing a restart.  
 
 To protect our community, please schedule downtime before deploying this change.
 
